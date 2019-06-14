@@ -55,7 +55,7 @@ class DFSpostorder {
 }
 
 class Node<T> {
-
+2
     private T data;
     private Node<T> lhs;
     private Node<T> rhs;
