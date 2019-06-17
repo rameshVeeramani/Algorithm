@@ -9,4 +9,5 @@ public class FindMinValueInBST {
             return root;
 
         return find(root.getLHS());
-    }}
+    }
+}
