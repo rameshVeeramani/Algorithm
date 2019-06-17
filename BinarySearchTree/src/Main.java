@@ -1,4 +1,5 @@
 public class Main {
+//INSERTION AND LOOKUP IS LOGN N
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
@@ -7,20 +8,35 @@ public class Main {
     public static Node<Integer> Insert(Node<Integer> node, Node<Integer> root) {
         if (root == null)
             return node;
-
-        if (node.getData() < root.getData()) {
+        if (node.getData() <= root.getData()) {
             root.setLHS(Insert(node, root.getLHS()));
         } else {
             root.setRHS(Insert(node, root.getRHS()));
         }
         return node;
     }
+
+    public Boolean Find(Node<Integer> toFind, Node<Integer> root)
+    {
+        if (root == null)
+            return false ;
+
+        if ((root != null) && root.getData() == toFind.getData())
+            return true;
+
+        if (toFind.getData() <= root.getData()){
+            Find(toFind,root.getLHS());
+        }else if (toFind.getData() > root.getData())
+        {
+            Find(toFind.getLHS(), root.getRHS());
+        }
+        return  null;
+    }
 }
 
 
 
 class Node<T> {
-2
     private T data;
     private Node<T> lhs;
     private Node<T> rhs;
