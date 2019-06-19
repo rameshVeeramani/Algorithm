@@ -38,7 +38,6 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
         }
         Siftup(parentIndex);
     }
-
     public void Insert(T value ){
         // check for heap size
        this.array[count] = value;
