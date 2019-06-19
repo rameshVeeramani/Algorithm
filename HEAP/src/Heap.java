@@ -3,7 +3,8 @@ import java.lang.reflect.Array;
 public abstract class Heap<T extends Comparable> {
 
     private static int MAX_SIZE = 400;
-    private T[] array;
+    protected Integer count ;
+    protected T[] array;
 
     public Heap(Class<T> clazz) {
 
